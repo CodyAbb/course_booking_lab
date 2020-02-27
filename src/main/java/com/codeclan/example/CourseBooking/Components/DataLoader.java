@@ -9,7 +9,9 @@ import com.codeclan.example.CourseBooking.Repositories.CustomerRepositories.Cust
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DataLoader implements ApplicationRunner {
     @Autowired
     CourseRepository courseRepository;
@@ -38,6 +40,7 @@ public class DataLoader implements ApplicationRunner {
         customerRepository.save(billy);
 
         Customer rachel = new Customer("Rachel Davis", "Whitburn", 26);
+        customerRepository.save(rachel);
 
         Booking billyBooking = new Booking("23-02-2019", python, billy);
         bookingRepository.save(billyBooking);
